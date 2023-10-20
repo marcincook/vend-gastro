@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Threading;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace WindowsFormsApp1
 {
@@ -38,11 +39,27 @@ namespace WindowsFormsApp1
             var dbPass = ConfigurationManager.AppSettings["db_pass"];
             textBoxDbPass.Text = dbPass;
 
-            
+
+
+            var rsComName = ConfigurationManager.AppSettings["rs_com_name"];
+            comboBoxCom.Text = rsComName;
+
+            var rsBaudRate = ConfigurationManager.AppSettings["rs_baud_rate"];
+            comboBoxBaudRate.Text = rsBaudRate;
+
+            var rsDataBits = ConfigurationManager.AppSettings["rs_data_bits"];
+            comboBoxDataBits.Text = rsDataBits;
+
+            var rsStopBits = ConfigurationManager.AppSettings["rs_stop_bits"];
+            comboBoxStopBits.Text = rsStopBits;
+
+            var rsParityBits = ConfigurationManager.AppSettings["rs_parity_bits"];
+            comboBoxParityBits.Text = rsParityBits;
+
         }
 
 
-        private void btnSaveConfig_Click(object sender, EventArgs e)
+        private void btnSaveDbConfig_Click(object sender, EventArgs e)
         {
             try
             {
@@ -70,13 +87,45 @@ namespace WindowsFormsApp1
 
         }
 
+        private void btnSaveRsConfig_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                configuration.AppSettings.Settings["rs_com_name"].Value = comboBoxCom.Text;
+                configuration.AppSettings.Settings["rs_baud_rate"].Value = comboBoxBaudRate.Text;
+                configuration.AppSettings.Settings["rs_data_bits"].Value = comboBoxDataBits.Text;
+                configuration.AppSettings.Settings["rs_stop_bits"].Value = comboBoxStopBits.Text;
+                configuration.AppSettings.Settings["rs_parity_bits"].Value = comboBoxParityBits.Text;
+
+                configuration.Save(ConfigurationSaveMode.Modified);
+
+                ConfigurationManager.RefreshSection("appSettings");
+
+                MessageBox.Show("Zmiany zostały zapisane", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                actualConfig();
+            }
+            catch (Exception ex)
+            {
+                string msg = string.Format("Błąd podczas zapisu \n{0}", ex.Message);
+
+                MessageBox.Show(msg, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
         private void btnCheckConnection_Click(object sender, EventArgs e)
         {
 
             var dbHost = ConfigurationManager.AppSettings["db_host"]; 
             var dbName = ConfigurationManager.AppSettings["db_name"]; 
             var dbUser = ConfigurationManager.AppSettings["db_user"]; 
-            var dbPass = ConfigurationManager.AppSettings["db_pass"];  
+            var dbPass = ConfigurationManager.AppSettings["db_pass"];
+
+            // Data Source=DESKTOP-Q2O4CJ3\SQL2019;Initial Catalog=BB_06_AUT_23;Persist Security Info=True;User ID=sa
 
             try
             {
@@ -90,6 +139,8 @@ namespace WindowsFormsApp1
                 progressBarDb.Value = 20;
 
                 if (connection.State == System.Data.ConnectionState.Open) {
+
+                    this.loadDataKarty(connection);
 
                     progressBarDb.Value = 30;
                     string symbol = string.Format("AUT");
@@ -114,7 +165,9 @@ namespace WindowsFormsApp1
                     // Call Close when done reading.
                     sqlDataReader.Close();
 
-                    labelDbResult.Text = "OK"; 
+                    labelDbResult.Text = "OK";
+
+                    // // this.nGastroKartaTableAdapter.Fill(this.ngastroKartaDataSet.NGastroKarta);
                 }
 
             }
@@ -130,6 +183,37 @@ namespace WindowsFormsApp1
 
             }
 
+        }
+
+        public void loadDataKarty(SqlConnection connection)
+        {
+            //using (SqlConnection connection = new SqlConnection(connectionString) //use your connection string here
+            //{
+                var bindingSource = new BindingSource();
+                string queryString = "SELECT * FROM dbo.NgastroKarta WHERE FlgBlokada=0";
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(queryString, connection))
+                {
+                    try
+                    {
+                        SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                        DataTable table = new DataTable();
+                        dataAdapter.Fill(table);
+                        bindingSource.DataSource = table;
+                        dataGridView1.ReadOnly = true;
+                        dataGridView1.DataSource = bindingSource;
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), "ERROR Loading");
+                    }
+                    finally
+                    {
+                        //connection.Close();
+                    }
+                }
+
+            //}
         }
 
         private static void ReadSingleRow(IDataRecord dataRecord)
@@ -161,6 +245,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'ngastroKartaDataSet.NGastroKarta' . Możesz go przenieść lub usunąć.
+            // this.nGastroKartaTableAdapter.Fill(this.ngastroKartaDataSet.NGastroKarta);
             string[] ports = SerialPort.GetPortNames();
             comboBoxCom.Items.AddRange(ports);
             buttonRsOpen.Enabled = true;
@@ -258,7 +344,7 @@ namespace WindowsFormsApp1
             bool mousePointerNotInTaskbar = Screen.GetWorkingArea(this).Contains(Cursor.Position);
 
             if (this.WindowState == FormWindowState.Minimized && mousePointerNotInTaskbar) {
-                notifyIcon1.Icon = SystemIcons.Application;
+                // notifyIcon1.Icon = Resources televend_logo_ico;
                 notifyIcon1.BalloonTipText = "Integration televend is running in System Tray";
                 notifyIcon1.ShowBalloonTip(1000);
                 this.ShowInTaskbar = false;
@@ -280,5 +366,24 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //dataGridView1.Columns[0].Selected = true;
+            //dataGridView1.Rows[0].Selected = true;
+
+            //dataGridView1.CurrentCell = dataGridView1[1,2];
+
+            var str = dataGridView1.CurrentCell.Value.ToString();
+
+
+            textBoxRsDataOut.Text = str;
+
+
+            MessageBox.Show(str, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        
     }
 }

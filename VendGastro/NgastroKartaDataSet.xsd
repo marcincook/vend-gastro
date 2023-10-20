@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NgastroKartaDataSet" targetNamespace="http://tempuri.org/NgastroKartaDataSet.xsd" xmlns:mstns="http://tempuri.org/NgastroKartaDataSet.xsd" xmlns="http://tempuri.org/NgastroKartaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BB_06_AUT_23ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BB_06_AUT_23ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.VendGastro.Properties.Settings.GlobalReference.Default.BB_06_AUT_23ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NGastroKartaTableAdapter" GeneratorDataComponentClassName="NGastroKartaTableAdapter" Name="NGastroKarta" UserDataComponentName="NGastroKartaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BB_06_AUT_23ConnectionString (Settings)" DbObjectName="BB_06_AUT_23.dbo.NGastroKarta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdentyfikatorSprzetowy, IdentyfikatorSystemowy, DataObowiazywania, DataModyfikacji, FlgBlokada, Opis, OkazicielImie, OkazicielNazwisko, OkazicielIdentyfikator, OkazicielWyroznik FROM dbo.NGastroKarta</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdentyfikatorSprzetowy" DataSetColumn="IdentyfikatorSprzetowy" />
+              <Mapping SourceColumn="IdentyfikatorSystemowy" DataSetColumn="IdentyfikatorSystemowy" />
+              <Mapping SourceColumn="DataObowiazywania" DataSetColumn="DataObowiazywania" />
+              <Mapping SourceColumn="DataModyfikacji" DataSetColumn="DataModyfikacji" />
+              <Mapping SourceColumn="FlgBlokada" DataSetColumn="FlgBlokada" />
+              <Mapping SourceColumn="Opis" DataSetColumn="Opis" />
+              <Mapping SourceColumn="OkazicielImie" DataSetColumn="OkazicielImie" />
+              <Mapping SourceColumn="OkazicielNazwisko" DataSetColumn="OkazicielNazwisko" />
+              <Mapping SourceColumn="OkazicielIdentyfikator" DataSetColumn="OkazicielIdentyfikator" />
+              <Mapping SourceColumn="OkazicielWyroznik" DataSetColumn="OkazicielWyroznik" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NgastroKartaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="NgastroKartaDataSet" msprop:Generator_DataSetName="NgastroKartaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NGastroKarta" msprop:Generator_RowEvHandlerName="NGastroKartaRowChangeEventHandler" msprop:Generator_RowDeletedName="NGastroKartaRowDeleted" msprop:Generator_RowDeletingName="NGastroKartaRowDeleting" msprop:Generator_RowEvArgName="NGastroKartaRowChangeEvent" msprop:Generator_TablePropName="NGastroKarta" msprop:Generator_RowChangedName="NGastroKartaRowChanged" msprop:Generator_RowChangingName="NGastroKartaRowChanging" msprop:Generator_TableClassName="NGastroKartaDataTable" msprop:Generator_RowClassName="NGastroKartaRow" msprop:Generator_TableVarName="tableNGastroKarta" msprop:Generator_UserTableName="NGastroKarta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdentyfikatorSprzetowy" msprop:Generator_ColumnPropNameInRow="IdentyfikatorSprzetowy" msprop:Generator_ColumnPropNameInTable="IdentyfikatorSprzetowyColumn" msprop:Generator_ColumnVarNameInTable="columnIdentyfikatorSprzetowy" msprop:Generator_UserColumnName="IdentyfikatorSprzetowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdentyfikatorSystemowy" msprop:Generator_ColumnPropNameInRow="IdentyfikatorSystemowy" msprop:Generator_ColumnPropNameInTable="IdentyfikatorSystemowyColumn" msprop:Generator_ColumnVarNameInTable="columnIdentyfikatorSystemowy" msprop:Generator_UserColumnName="IdentyfikatorSystemowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataObowiazywania" msprop:Generator_ColumnPropNameInRow="DataObowiazywania" msprop:Generator_ColumnPropNameInTable="DataObowiazywaniaColumn" msprop:Generator_ColumnVarNameInTable="columnDataObowiazywania" msprop:Generator_UserColumnName="DataObowiazywania" type="xs:dateTime" />
+              <xs:element name="DataModyfikacji" msprop:Generator_ColumnPropNameInRow="DataModyfikacji" msprop:Generator_ColumnPropNameInTable="DataModyfikacjiColumn" msprop:Generator_ColumnVarNameInTable="columnDataModyfikacji" msprop:Generator_UserColumnName="DataModyfikacji" type="xs:dateTime" />
+              <xs:element name="FlgBlokada" msprop:Generator_ColumnPropNameInRow="FlgBlokada" msprop:Generator_ColumnPropNameInTable="FlgBlokadaColumn" msprop:Generator_ColumnVarNameInTable="columnFlgBlokada" msprop:Generator_UserColumnName="FlgBlokada" type="xs:unsignedByte" />
+              <xs:element name="Opis" msprop:Generator_ColumnPropNameInRow="Opis" msprop:Generator_ColumnPropNameInTable="OpisColumn" msprop:Generator_ColumnVarNameInTable="columnOpis" msprop:Generator_UserColumnName="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OkazicielImie" msprop:Generator_ColumnPropNameInRow="OkazicielImie" msprop:Generator_ColumnPropNameInTable="OkazicielImieColumn" msprop:Generator_ColumnVarNameInTable="columnOkazicielImie" msprop:Generator_UserColumnName="OkazicielImie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OkazicielNazwisko" msprop:Generator_ColumnPropNameInRow="OkazicielNazwisko" msprop:Generator_ColumnPropNameInTable="OkazicielNazwiskoColumn" msprop:Generator_ColumnVarNameInTable="columnOkazicielNazwisko" msprop:Generator_UserColumnName="OkazicielNazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OkazicielIdentyfikator" msprop:Generator_ColumnPropNameInRow="OkazicielIdentyfikator" msprop:Generator_ColumnPropNameInTable="OkazicielIdentyfikatorColumn" msprop:Generator_ColumnVarNameInTable="columnOkazicielIdentyfikator" msprop:Generator_UserColumnName="OkazicielIdentyfikator">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OkazicielWyroznik" msprop:Generator_ColumnPropNameInRow="OkazicielWyroznik" msprop:Generator_ColumnPropNameInTable="OkazicielWyroznikColumn" msprop:Generator_ColumnVarNameInTable="columnOkazicielWyroznik" msprop:Generator_UserColumnName="OkazicielWyroznik">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
