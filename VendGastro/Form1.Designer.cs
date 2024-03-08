@@ -70,14 +70,14 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.copyright = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.identyfikatorSystemowyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okazicielImieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okazicielNazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,22 +87,27 @@
             this.nGastroKartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ngastroKartaDataSet = new VendGastro.NgastroKartaDataSet();
             this.nGastroKartaTableAdapter = new VendGastro.NgastroKartaDataSetTableAdapters.NGastroKartaTableAdapter();
+            this.btnDenit = new System.Windows.Forms.Button();
+            this.SprawdzStatusTelevend = new System.Windows.Forms.Button();
+            this.buttonGetPricingGroupForCard = new System.Windows.Forms.Button();
+            this.textBoxCardNumber = new System.Windows.Forms.TextBox();
             this.groupBoxDb.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGastroKartaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngastroKartaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSaveDbConfig
             // 
-            this.btnSaveDbConfig.Location = new System.Drawing.Point(6, 214);
+            this.btnSaveDbConfig.Location = new System.Drawing.Point(12, 412);
+            this.btnSaveDbConfig.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSaveDbConfig.Name = "btnSaveDbConfig";
-            this.btnSaveDbConfig.Size = new System.Drawing.Size(259, 24);
+            this.btnSaveDbConfig.Size = new System.Drawing.Size(518, 46);
             this.btnSaveDbConfig.TabIndex = 0;
             this.btnSaveDbConfig.Text = "Save Gastro configuration ";
             this.btnSaveDbConfig.UseVisualStyleBackColor = true;
@@ -110,74 +115,83 @@
             // 
             // textBoxDbName
             // 
-            this.textBoxDbName.Location = new System.Drawing.Point(81, 52);
+            this.textBoxDbName.Location = new System.Drawing.Point(162, 100);
+            this.textBoxDbName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxDbName.Name = "textBoxDbName";
-            this.textBoxDbName.Size = new System.Drawing.Size(180, 20);
+            this.textBoxDbName.Size = new System.Drawing.Size(356, 31);
             this.textBoxDbName.TabIndex = 1;
             // 
             // labelHost
             // 
             this.labelHost.AutoSize = true;
-            this.labelHost.Location = new System.Drawing.Point(46, 29);
+            this.labelHost.Location = new System.Drawing.Point(92, 56);
+            this.labelHost.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelHost.Name = "labelHost";
-            this.labelHost.Size = new System.Drawing.Size(29, 13);
+            this.labelHost.Size = new System.Drawing.Size(56, 25);
             this.labelHost.TabIndex = 2;
             this.labelHost.Text = "Host";
             // 
             // textBoxDbHost
             // 
-            this.textBoxDbHost.Location = new System.Drawing.Point(81, 26);
+            this.textBoxDbHost.Location = new System.Drawing.Point(162, 50);
+            this.textBoxDbHost.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxDbHost.Name = "textBoxDbHost";
-            this.textBoxDbHost.Size = new System.Drawing.Size(180, 20);
+            this.textBoxDbHost.Size = new System.Drawing.Size(356, 31);
             this.textBoxDbHost.TabIndex = 3;
             // 
             // textBoxDbUser
             // 
-            this.textBoxDbUser.Location = new System.Drawing.Point(81, 78);
+            this.textBoxDbUser.Location = new System.Drawing.Point(162, 150);
+            this.textBoxDbUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxDbUser.Name = "textBoxDbUser";
-            this.textBoxDbUser.Size = new System.Drawing.Size(180, 20);
+            this.textBoxDbUser.Size = new System.Drawing.Size(356, 31);
             this.textBoxDbUser.TabIndex = 4;
             // 
             // textBoxDbPass
             // 
-            this.textBoxDbPass.Location = new System.Drawing.Point(81, 104);
+            this.textBoxDbPass.Location = new System.Drawing.Point(162, 200);
+            this.textBoxDbPass.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxDbPass.Name = "textBoxDbPass";
             this.textBoxDbPass.PasswordChar = '*';
-            this.textBoxDbPass.Size = new System.Drawing.Size(180, 20);
+            this.textBoxDbPass.Size = new System.Drawing.Size(356, 31);
             this.textBoxDbPass.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 55);
+            this.label1.Location = new System.Drawing.Point(44, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(104, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Database";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 81);
+            this.label2.Location = new System.Drawing.Point(92, 156);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(57, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "User";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 107);
+            this.label3.Location = new System.Drawing.Point(90, 206);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Pass";
             // 
             // btnCheckDb
             // 
-            this.btnCheckDb.Location = new System.Drawing.Point(81, 158);
+            this.btnCheckDb.Location = new System.Drawing.Point(162, 304);
+            this.btnCheckDb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCheckDb.Name = "btnCheckDb";
-            this.btnCheckDb.Size = new System.Drawing.Size(180, 24);
+            this.btnCheckDb.Size = new System.Drawing.Size(360, 46);
             this.btnCheckDb.TabIndex = 11;
             this.btnCheckDb.Text = "Check";
             this.btnCheckDb.UseVisualStyleBackColor = true;
@@ -186,53 +200,59 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 132);
+            this.label5.Location = new System.Drawing.Point(54, 254);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(107, 25);
             this.label5.TabIndex = 21;
             this.label5.Text = "Parity bits";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 107);
+            this.label6.Location = new System.Drawing.Point(64, 206);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(96, 25);
             this.label6.TabIndex = 20;
             this.label6.Text = "Stop bits";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 81);
+            this.label7.Location = new System.Drawing.Point(62, 156);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(97, 25);
             this.label7.TabIndex = 19;
             this.label7.Text = "Data bits";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 55);
+            this.label8.Location = new System.Drawing.Point(54, 106);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(105, 25);
             this.label8.TabIndex = 18;
             this.label8.Text = "Baud rate";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 29);
+            this.label9.Location = new System.Drawing.Point(104, 56);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.Size = new System.Drawing.Size(56, 25);
             this.label9.TabIndex = 14;
             this.label9.Text = "Com";
             // 
             // progressBarRs
             // 
-            this.progressBarRs.Location = new System.Drawing.Point(86, 158);
+            this.progressBarRs.Location = new System.Drawing.Point(172, 304);
+            this.progressBarRs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBarRs.Name = "progressBarRs";
-            this.progressBarRs.Size = new System.Drawing.Size(178, 20);
+            this.progressBarRs.Size = new System.Drawing.Size(356, 38);
             this.progressBarRs.TabIndex = 23;
             // 
             // groupBoxDb
@@ -249,9 +269,11 @@
             this.groupBoxDb.Controls.Add(this.label2);
             this.groupBoxDb.Controls.Add(this.label3);
             this.groupBoxDb.Controls.Add(this.btnCheckDb);
-            this.groupBoxDb.Location = new System.Drawing.Point(7, 68);
+            this.groupBoxDb.Location = new System.Drawing.Point(14, 131);
+            this.groupBoxDb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxDb.Name = "groupBoxDb";
-            this.groupBoxDb.Size = new System.Drawing.Size(271, 246);
+            this.groupBoxDb.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxDb.Size = new System.Drawing.Size(542, 473);
             this.groupBoxDb.TabIndex = 24;
             this.groupBoxDb.TabStop = false;
             this.groupBoxDb.Text = "Database Gastro";
@@ -259,18 +281,20 @@
             // labelDbResult
             // 
             this.labelDbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDbResult.Location = new System.Drawing.Point(19, 132);
+            this.labelDbResult.Location = new System.Drawing.Point(38, 254);
+            this.labelDbResult.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelDbResult.Name = "labelDbResult";
-            this.labelDbResult.Size = new System.Drawing.Size(56, 20);
+            this.labelDbResult.Size = new System.Drawing.Size(112, 38);
             this.labelDbResult.TabIndex = 26;
             this.labelDbResult.Text = "status";
             this.labelDbResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // progressBarDb
             // 
-            this.progressBarDb.Location = new System.Drawing.Point(81, 132);
+            this.progressBarDb.Location = new System.Drawing.Point(162, 254);
+            this.progressBarDb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBarDb.Name = "progressBarDb";
-            this.progressBarDb.Size = new System.Drawing.Size(180, 20);
+            this.progressBarDb.Size = new System.Drawing.Size(360, 38);
             this.progressBarDb.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarDb.TabIndex = 25;
             // 
@@ -290,18 +314,21 @@
             this.groupBox1.Controls.Add(this.comboBoxBaudRate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBoxCom);
-            this.groupBox1.Location = new System.Drawing.Point(284, 68);
+            this.groupBox1.Location = new System.Drawing.Point(568, 131);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 246);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(546, 473);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RS232 Televend";
             // 
             // buttonRsClose
             // 
-            this.buttonRsClose.Location = new System.Drawing.Point(173, 184);
+            this.buttonRsClose.Location = new System.Drawing.Point(346, 354);
+            this.buttonRsClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonRsClose.Name = "buttonRsClose";
-            this.buttonRsClose.Size = new System.Drawing.Size(91, 24);
+            this.buttonRsClose.Size = new System.Drawing.Size(182, 46);
             this.buttonRsClose.TabIndex = 32;
             this.buttonRsClose.Text = "Close";
             this.buttonRsClose.UseVisualStyleBackColor = true;
@@ -309,9 +336,10 @@
             // 
             // btnSaveRsConfig
             // 
-            this.btnSaveRsConfig.Location = new System.Drawing.Point(6, 214);
+            this.btnSaveRsConfig.Location = new System.Drawing.Point(12, 412);
+            this.btnSaveRsConfig.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSaveRsConfig.Name = "btnSaveRsConfig";
-            this.btnSaveRsConfig.Size = new System.Drawing.Size(258, 24);
+            this.btnSaveRsConfig.Size = new System.Drawing.Size(516, 46);
             this.btnSaveRsConfig.TabIndex = 24;
             this.btnSaveRsConfig.Text = "Save Televend configuration";
             this.btnSaveRsConfig.UseVisualStyleBackColor = true;
@@ -319,9 +347,10 @@
             // 
             // buttonRsOpen
             // 
-            this.buttonRsOpen.Location = new System.Drawing.Point(86, 184);
+            this.buttonRsOpen.Location = new System.Drawing.Point(172, 354);
+            this.buttonRsOpen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonRsOpen.Name = "buttonRsOpen";
-            this.buttonRsOpen.Size = new System.Drawing.Size(81, 24);
+            this.buttonRsOpen.Size = new System.Drawing.Size(162, 46);
             this.buttonRsOpen.TabIndex = 31;
             this.buttonRsOpen.Text = "Open";
             this.buttonRsOpen.UseVisualStyleBackColor = true;
@@ -334,9 +363,10 @@
             "None",
             "Odd",
             "Even"});
-            this.comboBoxParityBits.Location = new System.Drawing.Point(86, 129);
+            this.comboBoxParityBits.Location = new System.Drawing.Point(172, 248);
+            this.comboBoxParityBits.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxParityBits.Name = "comboBoxParityBits";
-            this.comboBoxParityBits.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxParityBits.Size = new System.Drawing.Size(352, 33);
             this.comboBoxParityBits.TabIndex = 30;
             this.comboBoxParityBits.Text = "None";
             // 
@@ -346,9 +376,10 @@
             this.comboBoxStopBits.Items.AddRange(new object[] {
             "One",
             "Two"});
-            this.comboBoxStopBits.Location = new System.Drawing.Point(86, 103);
+            this.comboBoxStopBits.Location = new System.Drawing.Point(172, 198);
+            this.comboBoxStopBits.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxStopBits.Name = "comboBoxStopBits";
-            this.comboBoxStopBits.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxStopBits.Size = new System.Drawing.Size(352, 33);
             this.comboBoxStopBits.TabIndex = 29;
             this.comboBoxStopBits.Text = "One";
             // 
@@ -359,9 +390,10 @@
             "6",
             "7",
             "8"});
-            this.comboBoxDataBits.Location = new System.Drawing.Point(86, 77);
+            this.comboBoxDataBits.Location = new System.Drawing.Point(172, 148);
+            this.comboBoxDataBits.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxDataBits.Name = "comboBoxDataBits";
-            this.comboBoxDataBits.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxDataBits.Size = new System.Drawing.Size(352, 33);
             this.comboBoxDataBits.TabIndex = 28;
             this.comboBoxDataBits.Text = "8";
             // 
@@ -373,18 +405,20 @@
             "4800",
             "9600",
             "115200"});
-            this.comboBoxBaudRate.Location = new System.Drawing.Point(86, 52);
+            this.comboBoxBaudRate.Location = new System.Drawing.Point(172, 100);
+            this.comboBoxBaudRate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxBaudRate.Name = "comboBoxBaudRate";
-            this.comboBoxBaudRate.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxBaudRate.Size = new System.Drawing.Size(352, 33);
             this.comboBoxBaudRate.TabIndex = 27;
             this.comboBoxBaudRate.Text = "115200";
             // 
             // comboBoxCom
             // 
             this.comboBoxCom.FormattingEnabled = true;
-            this.comboBoxCom.Location = new System.Drawing.Point(86, 25);
+            this.comboBoxCom.Location = new System.Drawing.Point(172, 48);
+            this.comboBoxCom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxCom.Name = "comboBoxCom";
-            this.comboBoxCom.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxCom.Size = new System.Drawing.Size(352, 33);
             this.comboBoxCom.TabIndex = 26;
             // 
             // serialPort1
@@ -393,18 +427,20 @@
             // 
             // textBoxRsDataOut
             // 
-            this.textBoxRsDataOut.Location = new System.Drawing.Point(6, 32);
+            this.textBoxRsDataOut.Location = new System.Drawing.Point(12, 62);
+            this.textBoxRsDataOut.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxRsDataOut.Multiline = true;
             this.textBoxRsDataOut.Name = "textBoxRsDataOut";
-            this.textBoxRsDataOut.Size = new System.Drawing.Size(199, 67);
+            this.textBoxRsDataOut.Size = new System.Drawing.Size(394, 125);
             this.textBoxRsDataOut.TabIndex = 26;
             // 
             // labelRsOut
             // 
             this.labelRsOut.AutoSize = true;
-            this.labelRsOut.Location = new System.Drawing.Point(6, 16);
+            this.labelRsOut.Location = new System.Drawing.Point(12, 31);
+            this.labelRsOut.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelRsOut.Name = "labelRsOut";
-            this.labelRsOut.Size = new System.Drawing.Size(97, 13);
+            this.labelRsOut.Size = new System.Drawing.Size(200, 25);
             this.labelRsOut.TabIndex = 27;
             this.labelRsOut.Text = "Transmitter Controll";
             // 
@@ -417,18 +453,21 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBoxRsDataOut);
             this.groupBox2.Controls.Add(this.labelRsOut);
-            this.groupBox2.Location = new System.Drawing.Point(563, 68);
+            this.groupBox2.Location = new System.Drawing.Point(1126, 131);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(219, 246);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Size = new System.Drawing.Size(438, 473);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RS Communications";
             // 
             // buttonRsClearDataIn
             // 
-            this.buttonRsClearDataIn.Location = new System.Drawing.Point(107, 214);
+            this.buttonRsClearDataIn.Location = new System.Drawing.Point(214, 412);
+            this.buttonRsClearDataIn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonRsClearDataIn.Name = "buttonRsClearDataIn";
-            this.buttonRsClearDataIn.Size = new System.Drawing.Size(98, 24);
+            this.buttonRsClearDataIn.Size = new System.Drawing.Size(196, 46);
             this.buttonRsClearDataIn.TabIndex = 32;
             this.buttonRsClearDataIn.Text = "Clear Data";
             this.buttonRsClearDataIn.UseVisualStyleBackColor = true;
@@ -436,9 +475,10 @@
             // 
             // buttonRsClearDataOut
             // 
-            this.buttonRsClearDataOut.Location = new System.Drawing.Point(115, 105);
+            this.buttonRsClearDataOut.Location = new System.Drawing.Point(230, 202);
+            this.buttonRsClearDataOut.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonRsClearDataOut.Name = "buttonRsClearDataOut";
-            this.buttonRsClearDataOut.Size = new System.Drawing.Size(90, 24);
+            this.buttonRsClearDataOut.Size = new System.Drawing.Size(180, 46);
             this.buttonRsClearDataOut.TabIndex = 30;
             this.buttonRsClearDataOut.Text = "Clear Data";
             this.buttonRsClearDataOut.UseVisualStyleBackColor = true;
@@ -446,17 +486,19 @@
             // 
             // textBoxRsDataIn
             // 
-            this.textBoxRsDataIn.Location = new System.Drawing.Point(6, 152);
+            this.textBoxRsDataIn.Location = new System.Drawing.Point(12, 292);
+            this.textBoxRsDataIn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxRsDataIn.Multiline = true;
             this.textBoxRsDataIn.Name = "textBoxRsDataIn";
-            this.textBoxRsDataIn.Size = new System.Drawing.Size(199, 59);
+            this.textBoxRsDataIn.Size = new System.Drawing.Size(394, 110);
             this.textBoxRsDataIn.TabIndex = 31;
             // 
             // buttonRsSendData
             // 
-            this.buttonRsSendData.Location = new System.Drawing.Point(6, 106);
+            this.buttonRsSendData.Location = new System.Drawing.Point(12, 204);
+            this.buttonRsSendData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonRsSendData.Name = "buttonRsSendData";
-            this.buttonRsSendData.Size = new System.Drawing.Size(103, 24);
+            this.buttonRsSendData.Size = new System.Drawing.Size(206, 46);
             this.buttonRsSendData.TabIndex = 29;
             this.buttonRsSendData.Text = "Send RD data";
             this.buttonRsSendData.UseVisualStyleBackColor = true;
@@ -465,9 +507,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 136);
+            this.label4.Location = new System.Drawing.Point(12, 262);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(177, 25);
             this.label4.TabIndex = 31;
             this.label4.Text = "Receiver Controll";
             // 
@@ -483,9 +526,10 @@
             // 
             this.copyright.AutoSize = true;
             this.copyright.ForeColor = System.Drawing.SystemColors.Control;
-            this.copyright.Location = new System.Drawing.Point(240, 38);
+            this.copyright.Location = new System.Drawing.Point(480, 73);
+            this.copyright.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.copyright.Name = "copyright";
-            this.copyright.Size = new System.Drawing.Size(106, 13);
+            this.copyright.Size = new System.Drawing.Size(215, 25);
             this.copyright.TabIndex = 31;
             this.copyright.Text = "Copyright GrupaAMB";
             // 
@@ -499,10 +543,91 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.copyright);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 61);
+            this.panel1.Size = new System.Drawing.Size(1562, 117);
             this.panel1.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(1188, 15);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(338, 22);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "it gastro contact: michal.sudnik@4wise.pl";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(1182, 38);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(343, 22);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "it vending contact: marcin@martec24.com";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(1272, 62);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(257, 22);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "dev contact: it@grupaamb.com";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(446, 73);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(316, 22);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Release 2023-10-20 by Grupa AMB IT";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(440, 15);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(750, 44);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Televend-Gastro Connector v1.0";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::VendGastro.Properties.Resources.pos;
+            this.pictureBox2.Location = new System.Drawing.Point(342, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(92, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VendGastro.Properties.Resources.televend_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(316, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -520,91 +645,20 @@
             this.okazicielWyroznikDataGridViewTextBoxColumn,
             this.opisDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.nGastroKartaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 320);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 797);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 186);
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.Size = new System.Drawing.Size(1550, 260);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::VendGastro.Properties.Resources.pos;
-            this.pictureBox2.Location = new System.Drawing.Point(171, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 47);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VendGastro.Properties.Resources.televend_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(158, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(220, 8);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(375, 23);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Televend-Gastro Connector v1.0";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(223, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 12);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Release 2023-10-20 by Grupa AMB IT";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(636, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 12);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "dev contact: it@grupaamb.com";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(591, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 12);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "it vending contact: marcin@martec24.com";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(594, 8);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(177, 12);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "it gastro contact: michal.sudnik@4wise.pl";
             // 
             // identyfikatorSystemowyDataGridViewTextBoxColumn
             // 
             this.identyfikatorSystemowyDataGridViewTextBoxColumn.DataPropertyName = "IdentyfikatorSystemowy";
             this.identyfikatorSystemowyDataGridViewTextBoxColumn.HeaderText = "NrKarty";
+            this.identyfikatorSystemowyDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.identyfikatorSystemowyDataGridViewTextBoxColumn.Name = "identyfikatorSystemowyDataGridViewTextBoxColumn";
             this.identyfikatorSystemowyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -612,6 +666,7 @@
             // 
             this.okazicielImieDataGridViewTextBoxColumn.DataPropertyName = "OkazicielImie";
             this.okazicielImieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.okazicielImieDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.okazicielImieDataGridViewTextBoxColumn.Name = "okazicielImieDataGridViewTextBoxColumn";
             this.okazicielImieDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -619,6 +674,7 @@
             // 
             this.okazicielNazwiskoDataGridViewTextBoxColumn.DataPropertyName = "OkazicielNazwisko";
             this.okazicielNazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.okazicielNazwiskoDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.okazicielNazwiskoDataGridViewTextBoxColumn.Name = "okazicielNazwiskoDataGridViewTextBoxColumn";
             this.okazicielNazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -626,6 +682,7 @@
             // 
             this.okazicielIdentyfikatorDataGridViewTextBoxColumn.DataPropertyName = "OkazicielIdentyfikator";
             this.okazicielIdentyfikatorDataGridViewTextBoxColumn.HeaderText = "Identyfikator";
+            this.okazicielIdentyfikatorDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.okazicielIdentyfikatorDataGridViewTextBoxColumn.Name = "okazicielIdentyfikatorDataGridViewTextBoxColumn";
             this.okazicielIdentyfikatorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -633,6 +690,7 @@
             // 
             this.okazicielWyroznikDataGridViewTextBoxColumn.DataPropertyName = "OkazicielWyroznik";
             this.okazicielWyroznikDataGridViewTextBoxColumn.HeaderText = "Wyroznik";
+            this.okazicielWyroznikDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.okazicielWyroznikDataGridViewTextBoxColumn.Name = "okazicielWyroznikDataGridViewTextBoxColumn";
             this.okazicielWyroznikDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -640,6 +698,7 @@
             // 
             this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
             this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
             this.opisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -657,17 +716,59 @@
             // 
             this.nGastroKartaTableAdapter.ClearBeforeFill = true;
             // 
+            // btnDenit
+            // 
+            this.btnDenit.Location = new System.Drawing.Point(26, 627);
+            this.btnDenit.Name = "btnDenit";
+            this.btnDenit.Size = new System.Drawing.Size(367, 53);
+            this.btnDenit.TabIndex = 33;
+            this.btnDenit.Text = "Rozłącz z Televend";
+            this.btnDenit.UseVisualStyleBackColor = true;
+            this.btnDenit.Click += new System.EventHandler(this.btnDenit_Click);
+            // 
+            // SprawdzStatusTelevend
+            // 
+            this.SprawdzStatusTelevend.Location = new System.Drawing.Point(432, 627);
+            this.SprawdzStatusTelevend.Name = "SprawdzStatusTelevend";
+            this.SprawdzStatusTelevend.Size = new System.Drawing.Size(406, 53);
+            this.SprawdzStatusTelevend.TabIndex = 35;
+            this.SprawdzStatusTelevend.Text = "SprawdzStatusButton";
+            this.SprawdzStatusTelevend.UseVisualStyleBackColor = true;
+            this.SprawdzStatusTelevend.Click += new System.EventHandler(this.SprawdzStatusButton_Click);
+            // 
+            // buttonGetPricingGroupForCard
+            // 
+            this.buttonGetPricingGroupForCard.Location = new System.Drawing.Point(845, 688);
+            this.buttonGetPricingGroupForCard.Name = "buttonGetPricingGroupForCard";
+            this.buttonGetPricingGroupForCard.Size = new System.Drawing.Size(316, 70);
+            this.buttonGetPricingGroupForCard.TabIndex = 36;
+            this.buttonGetPricingGroupForCard.Text = "GetPricingGroup";
+            this.buttonGetPricingGroupForCard.UseVisualStyleBackColor = true;
+            this.buttonGetPricingGroupForCard.Click += new System.EventHandler(this.buttonGetPricingGroupForCard_Click);
+            // 
+            // textBoxCardNumber
+            // 
+            this.textBoxCardNumber.Location = new System.Drawing.Point(845, 627);
+            this.textBoxCardNumber.Name = "textBoxCardNumber";
+            this.textBoxCardNumber.Size = new System.Drawing.Size(310, 31);
+            this.textBoxCardNumber.TabIndex = 37;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 518);
+            this.ClientSize = new System.Drawing.Size(1568, 1072);
+            this.Controls.Add(this.textBoxCardNumber);
+            this.Controls.Add(this.buttonGetPricingGroupForCard);
+            this.Controls.Add(this.SprawdzStatusTelevend);
+            this.Controls.Add(this.btnDenit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxDb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VendGastro Connector";
@@ -681,12 +782,13 @@
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGastroKartaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngastroKartaDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -749,6 +851,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnDenit;
+        private System.Windows.Forms.Button SprawdzStatusTelevend;
+        private System.Windows.Forms.Button buttonGetPricingGroupForCard;
+        private System.Windows.Forms.TextBox textBoxCardNumber;
     }
 }
 
