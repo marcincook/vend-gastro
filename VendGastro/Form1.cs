@@ -4,8 +4,11 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms; 
 
@@ -13,6 +16,25 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+
+
+        // [DllImport("C:\\Users\\Marcin\\source\\repos\\VendGastro\\TelevendPOS.dll")]
+
+
+        // Check if the user has access to the requested DLL.
+        public static string dllPath = Path.GetFullPath("C:\\Users\\Marcin\\source\\repos\\VendGastro\\TelevendPOS.dll");
+ 
+
+        // Load the assembly from the specified path.
+        // Assembly loadedAssembly = Assembly.LoadFrom(dllPath);
+
+        // Now you can work with types and methods from the loaded assembly.
+        // For example:
+        // TelevendInit televendInit = loadedAssembly.GetType("TelevendInit");
+        // object instance = Activator.CreateInstance(myType);
+        // Invoke methods or access properties as needed.
+
+        // int TelevendInit(int serial_port_number, TelevendCallback callback);
 
 
         string rsDataOut;
