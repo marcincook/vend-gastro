@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 public class TelevendInterface
 {
@@ -26,4 +21,8 @@ public class TelevendInterface
 
     [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]
     public static extern int TelevendGetPricingGroup(out uint AvailableCredit, out uint CardID);
+
+
+    [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]
+    public static extern int TelevendRequest(int amount);
 }
