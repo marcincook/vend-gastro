@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms; 
 
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -253,6 +254,29 @@ namespace WindowsFormsApp1
             buttonRsClose.Enabled = false;
             buttonRsSendData.Enabled = false;
 
+            // Wywołaj funkcję inicjalizacyjną
+            int result = TelevendInterface.TelevendInit(1, TelevendInitCallback);
+
+            // Sprawdź wynik inicjalizacji
+            if (result == 0)
+            {
+                // Inicjalizacja powiodła się
+                MessageBox.Show("Inicjalizacja powiodła się!");
+            }
+            else
+            {
+                // Inicjalizacja nie powiodła się
+                MessageBox.Show("Inicjalizacja nie powiodła się!");
+            }
+
+        }
+
+        // Funkcja zwrotna (callback), którą możesz przekazać do DLL-a
+        private void TelevendInitCallback(int result)
+        {
+            // Obsługa zwrotu funkcji, np. wyświetlenie komunikatu
+            MessageBox.Show($"Zwrot funkcji z wynikiem: {result}");
+             
         }
 
         private void buttonRsOpen_Click(object sender, EventArgs e)
@@ -284,6 +308,8 @@ namespace WindowsFormsApp1
 
         private void buttonRsClose_Click(object sender, EventArgs e)
         {
+
+            
             if (serialPort1.IsOpen)
             {
                 serialPort1.Close();
@@ -384,6 +410,71 @@ namespace WindowsFormsApp1
 
         }
 
-        
+        private void btnDenit_Click(object sender, EventArgs e)
+        {
+            // Wywołaj funkcję deinicjalizacyjną
+            TelevendInterface.TelevendDeinit();
+
+            // Inne działania związane z zakończeniem
+            // ...
+        }
+
+        private void SprawdzStatusButton_Click(object sender, EventArgs e)
+        {
+            // Wywołaj funkcję sprawdzającą status
+            int status = TelevendInterface.TelevendStatus();
+
+            // Sprawdź status i podjęcie odpowiednich działań
+            switch (status)
+            {
+                case 0:
+                    MessageBox.Show("Status: Idle");
+                    break;
+                case 1:
+                    MessageBox.Show("Status: Approving");
+                    break;
+                case 2:
+                    MessageBox.Show("Status: Waiting Finalization");
+                    break;
+                case -1:
+                    MessageBox.Show("Status: Not Initialized");
+                    break;
+                case -2:
+                    MessageBox.Show("Status: No Communication");
+                    break;
+                default:
+                    MessageBox.Show("Unknown Status");
+                    break;
+            }
+        }
+
+        private void buttonGetPricingGroupForCard_Click(object sender, EventArgs e)
+        {
+            textBoxCardNumber.Text = string.Empty;
+
+            // 12006942281
+
+            //availableCredit
+
+            // Call the function to get pricing group information
+            int pricingGroup = TelevendInterface.TelevendGetPricingGroup(out uint availableCredit, out uint cardID);
+
+            // Check the result and display information
+            switch (pricingGroup)
+            {
+                case -1:
+                    MessageBox.Show("Not Initialized");
+                    break;
+                case -2:
+                    MessageBox.Show("No Communication");
+                    break;
+                case -4:
+                    MessageBox.Show("Pricing Group Unknown/Not Available");
+                    break;
+                default:
+                    MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID}");
+                    break;
+            }
+        }
     }
 }
