@@ -71,6 +71,9 @@
             this.progressBarRs = new System.Windows.Forms.ProgressBar();
             this.btnTelevendInit = new System.Windows.Forms.Button();
             this.groupBoxTelevend = new System.Windows.Forms.GroupBox();
+            this.textBoxTelevendAmount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnTelevendRequest = new System.Windows.Forms.Button();
             this.groupBoxDb.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -224,10 +227,6 @@
             this.btnSaveRsConfig.UseVisualStyleBackColor = true;
             this.btnSaveRsConfig.Click += new System.EventHandler(this.btnSaveRsConfig_Click);
             // 
-            // serialPort1
-            // 
-            // this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -315,11 +314,11 @@
             this.okazicielWyroznikDataGridViewTextBoxColumn,
             this.opisDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.nGastroKartaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 414);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 368);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 135);
+            this.dataGridView1.Size = new System.Drawing.Size(775, 190);
             this.dataGridView1.TabIndex = 34;
             // 
             // identyfikatorSystemowyDataGridViewTextBoxColumn
@@ -467,11 +466,40 @@
             this.groupBoxTelevend.TabStop = false;
             this.groupBoxTelevend.Text = "TelevendBox";
             // 
+            // textBoxTelevendAmount
+            // 
+            this.textBoxTelevendAmount.Location = new System.Drawing.Point(570, 233);
+            this.textBoxTelevendAmount.Name = "textBoxTelevendAmount";
+            this.textBoxTelevendAmount.Size = new System.Drawing.Size(158, 20);
+            this.textBoxTelevendAmount.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(569, 217);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Kwota w groszach";
+            // 
+            // btnTelevendRequest
+            // 
+            this.btnTelevendRequest.Location = new System.Drawing.Point(570, 260);
+            this.btnTelevendRequest.Name = "btnTelevendRequest";
+            this.btnTelevendRequest.Size = new System.Drawing.Size(157, 40);
+            this.btnTelevendRequest.TabIndex = 43;
+            this.btnTelevendRequest.Text = "Wyślij ";
+            this.btnTelevendRequest.UseVisualStyleBackColor = true;
+            this.btnTelevendRequest.Click += new System.EventHandler(this.btnTelevendRequest_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 737);
+            this.ClientSize = new System.Drawing.Size(795, 570);
+            this.Controls.Add(this.btnTelevendRequest);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxTelevendAmount);
             this.Controls.Add(this.groupBoxTelevend);
             this.Controls.Add(this.textBoxCardNumber);
             this.Controls.Add(this.btnTelevendGetPricingGroup);
@@ -543,6 +571,9 @@
         private System.Windows.Forms.ProgressBar progressBarRs;
         private System.Windows.Forms.Button btnTelevendInit;
         private System.Windows.Forms.GroupBox groupBoxTelevend;
+        private System.Windows.Forms.TextBox textBoxTelevendAmount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnTelevendRequest;
     }
 }
 

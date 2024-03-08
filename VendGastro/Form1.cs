@@ -4,12 +4,19 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-
+using VendGastro;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+
+        // Delegat funkcji zwrotnej
+        //private TelevendCallbackHandler.TelevendCallback televendCallback;
+
+        // Set the callback in the C++ DLL
+        //TelevendInterface.TelevendCallback(TelevendCallbackHandler.OnTelevendCallback);
+
 
 
         public string comNumber = ConfigurationManager.AppSettings["com_number"];
@@ -22,6 +29,23 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             getConfig();
+
+            // Inicjalizacja delegata funkcji zwrotnej
+            //televendCallback = new TelevendCallbackHandler.TelevendCallback(OnTelevendCallback);
+
+        }
+
+        private void OnTelevendCallback(int result, int paymentType, int discount, int totalAmount, ulong transactionID)
+        {
+            // Obsługa funkcji zwrotnej w kontekście UI
+            Invoke(new Action(() =>
+            {
+                // Tutaj umieść logikę obsługi funkcji zwrotnej w formularzu
+                // ...
+
+                // Przykład: Wyświetlenie komunikatu z informacjami zwrotnymi
+                MessageBox.Show($"Result: {result}\nPayment Type: {paymentType}\nDiscount: {discount}\nTotal Amount: {totalAmount}\nTransaction ID: {transactionID}");
+            }));
         }
 
         void getConfig()
@@ -99,10 +123,12 @@ namespace WindowsFormsApp1
         private void btnCheckConnection_Click(object sender, EventArgs e)
         {
 
-            var dbHost = ConfigurationManager.AppSettings["db_host"];
-            var dbName = ConfigurationManager.AppSettings["db_name"];
-            var dbUser = ConfigurationManager.AppSettings["db_user"];
-            var dbPass = ConfigurationManager.AppSettings["db_pass"];
+ 
+
+            /*            var dbHost = ConfigurationManager.AppSettings["db_host"];
+                        var dbName = ConfigurationManager.AppSettings["db_name"];
+                        var dbUser = ConfigurationManager.AppSettings["db_user"];
+                        var dbPass = ConfigurationManager.AppSettings["db_pass"];*/
 
             // Data Source=DESKTOP-Q2O4CJ3\SQL2019;Initial Catalog=BB_06_AUT_23;Persist Security Info=True;User ID=sa
 
@@ -222,7 +248,7 @@ namespace WindowsFormsApp1
             int comInt = Int32.Parse(comNumber);
 
             // Wywołaj funkcję inicjalizacyjną
-            int result = TelevendInterface.TelevendInit(comInt, TelevendCallback);
+            int result = TelevendInterface.TelevendInit(comInt, TelevendCallback );
 
             // Sprawdź wynik inicjalizacji
             if (result == 0)
@@ -242,12 +268,49 @@ namespace WindowsFormsApp1
         }
 
         // Funkcja zwrotna (callback), którą możesz przekazać do DLL-a
-        private void TelevendCallback(int result)
+/*        private void TelevendCallback(int result)
         {
             // Obsługa zwrotu funkcji, np. wyświetlenie komunikatu
             MessageBox.Show($"Zwrot funkcji z wynikiem: {result}");
 
-        }
+            // ParseTelevendCallback(result);
+
+        }*/
+ 
+        private  void TelevendCallback(int result, int paymentType, int discount, int totalAmount, ulong transactionID)
+        {
+            // Handle the callback result
+            switch (result)
+            {
+                case 0:
+                    MessageBox.Show("Payment Approved");
+                    break;
+                case -1:
+                    MessageBox.Show("Payment Authorization Timeout");
+                    break;
+                case -2:
+                    MessageBox.Show("Payment Authorization Rejected - Not Enough Credit");
+                    break;
+                case -3:
+                    MessageBox.Show("No Response from Televend Box (Local Communication Failure)");
+                    break;
+                case -4:
+                    MessageBox.Show("Payment Canceled by User");
+                    break;
+                case -9:
+                    MessageBox.Show("Payment Denied with Unspecified Reason");
+                    break;
+                default:
+                    MessageBox.Show($"Unknown Result: {result}");
+                    break;
+            }
+
+            // Handle additional information
+            MessageBox.Show($"Payment Type: {paymentType}");
+            MessageBox.Show($"Discount: {discount}");
+            MessageBox.Show($"Total Amount: {totalAmount}");
+            MessageBox.Show($"Transaction ID: {transactionID}");
+        } 
 
 
 
@@ -343,6 +406,8 @@ namespace WindowsFormsApp1
             // Call the function to get pricing group information
             int pricingGroup = TelevendInterface.TelevendGetPricingGroup(out uint availableCredit, out uint cardID);
 
+            textBoxCardNumber.Text = cardID.ToString();
+
             // Check the result and display information
             switch (pricingGroup)
             {
@@ -390,6 +455,36 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Unknown Result");
                     break;
             }
+        }
+
+        private void btnTelevendRequest_Click(object sender, EventArgs e)
+        {
+            int requestedAmount = Int32.Parse(textBoxTelevendAmount.Text) * 100;
+
+            // Call the function to request payment authorization
+            int result = TelevendInterface.TelevendRequest(requestedAmount);
+
+            // Check the result and take appropriate actions
+            switch (result)
+            {
+                case 0:
+                    MessageBox.Show("Payment Request Accepted");
+                    // The callback function will be called for approval/denial
+                    break;
+                case -1:
+                    MessageBox.Show("Not Initialized");
+                    break;
+                case -2:
+                    MessageBox.Show("No Communication");
+                    break;
+                case -3:
+                    MessageBox.Show("Busy, Please Try Again Later");
+                    break;
+                default:
+                    MessageBox.Show("Unknown Result");
+                    break;
+            }
+
         }
     }
 }
