@@ -74,6 +74,7 @@
             this.textBoxTelevendAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTelevendRequest = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBoxDb.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -407,13 +408,14 @@
             // 
             // btnTelevendGetPricingGroup
             // 
+            this.btnTelevendGetPricingGroup.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnTelevendGetPricingGroup.Location = new System.Drawing.Point(7, 2);
             this.btnTelevendGetPricingGroup.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelevendGetPricingGroup.Name = "btnTelevendGetPricingGroup";
             this.btnTelevendGetPricingGroup.Size = new System.Drawing.Size(165, 53);
             this.btnTelevendGetPricingGroup.TabIndex = 36;
-            this.btnTelevendGetPricingGroup.Text = "GetPricingGroup";
-            this.btnTelevendGetPricingGroup.UseVisualStyleBackColor = true;
+            this.btnTelevendGetPricingGroup.Text = "Pobierz dane karty";
+            this.btnTelevendGetPricingGroup.UseVisualStyleBackColor = false;
             this.btnTelevendGetPricingGroup.Click += new System.EventHandler(this.btnTelevendGetPricingGroup_Click);
             // 
             // textBoxComNumber
@@ -426,7 +428,7 @@
             // 
             // textBoxCardNumber
             // 
-            this.textBoxCardNumber.Location = new System.Drawing.Point(570, 106);
+            this.textBoxCardNumber.Location = new System.Drawing.Point(179, 19);
             this.textBoxCardNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCardNumber.Name = "textBoxCardNumber";
             this.textBoxCardNumber.Size = new System.Drawing.Size(157, 20);
@@ -468,7 +470,7 @@
             // 
             // textBoxTelevendAmount
             // 
-            this.textBoxTelevendAmount.Location = new System.Drawing.Point(570, 233);
+            this.textBoxTelevendAmount.Location = new System.Drawing.Point(344, 19);
             this.textBoxTelevendAmount.Name = "textBoxTelevendAmount";
             this.textBoxTelevendAmount.Size = new System.Drawing.Size(158, 20);
             this.textBoxTelevendAmount.TabIndex = 41;
@@ -476,7 +478,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(569, 217);
+            this.label4.Location = new System.Drawing.Point(341, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 42;
@@ -484,19 +486,30 @@
             // 
             // btnTelevendRequest
             // 
-            this.btnTelevendRequest.Location = new System.Drawing.Point(570, 260);
+            this.btnTelevendRequest.BackColor = System.Drawing.Color.Red;
+            this.btnTelevendRequest.Location = new System.Drawing.Point(508, 2);
             this.btnTelevendRequest.Name = "btnTelevendRequest";
-            this.btnTelevendRequest.Size = new System.Drawing.Size(157, 40);
+            this.btnTelevendRequest.Size = new System.Drawing.Size(281, 53);
             this.btnTelevendRequest.TabIndex = 43;
-            this.btnTelevendRequest.Text = "Wyślij ";
-            this.btnTelevendRequest.UseVisualStyleBackColor = true;
+            this.btnTelevendRequest.Text = "Wyślij Rachunek do Televend";
+            this.btnTelevendRequest.UseVisualStyleBackColor = false;
             this.btnTelevendRequest.Click += new System.EventHandler(this.btnTelevendRequest_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(177, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Numer karty";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 720);
+            this.ClientSize = new System.Drawing.Size(2016, 122);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTelevendRequest);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxTelevendAmount);
@@ -507,8 +520,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBoxDb);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1024, 100);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "VendGastro Connector";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
@@ -574,6 +588,7 @@
         private System.Windows.Forms.TextBox textBoxTelevendAmount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTelevendRequest;
+        private System.Windows.Forms.Label label5;
     }
 }
 
