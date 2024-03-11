@@ -252,7 +252,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.copyright);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Location = new System.Drawing.Point(8, 577);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(781, 61);
             this.panel1.TabIndex = 33;
@@ -407,10 +407,10 @@
             // 
             // btnTelevendGetPricingGroup
             // 
-            this.btnTelevendGetPricingGroup.Location = new System.Drawing.Point(569, 130);
+            this.btnTelevendGetPricingGroup.Location = new System.Drawing.Point(7, 2);
             this.btnTelevendGetPricingGroup.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelevendGetPricingGroup.Name = "btnTelevendGetPricingGroup";
-            this.btnTelevendGetPricingGroup.Size = new System.Drawing.Size(158, 36);
+            this.btnTelevendGetPricingGroup.Size = new System.Drawing.Size(165, 53);
             this.btnTelevendGetPricingGroup.TabIndex = 36;
             this.btnTelevendGetPricingGroup.Text = "GetPricingGroup";
             this.btnTelevendGetPricingGroup.UseVisualStyleBackColor = true;
@@ -496,7 +496,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 570);
+            this.ClientSize = new System.Drawing.Size(798, 720);
             this.Controls.Add(this.btnTelevendRequest);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxTelevendAmount);

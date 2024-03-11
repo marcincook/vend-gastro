@@ -279,37 +279,41 @@ namespace WindowsFormsApp1
  
         private  void TelevendCallback(int result, int paymentType, int discount, int totalAmount, ulong transactionID)
         {
+            string message = "";
             // Handle the callback result
             switch (result)
             {
                 case 0:
-                    MessageBox.Show("Payment Approved");
+                    message = "Platnosc zatwierdzona";
                     break;
                 case -1:
-                    MessageBox.Show("Payment Authorization Timeout");
+                    message = "Autoryzacja Platnosci Timeout";
                     break;
                 case -2:
-                    MessageBox.Show("Payment Authorization Rejected - Not Enough Credit");
+                    message = "Autoryzacja Odrzucona - Brakuje Kredytu";
                     break;
                 case -3:
-                    MessageBox.Show("No Response from Televend Box (Local Communication Failure)");
+                    message = "Brak odpowiedzi z Televend Box (Local Communication Failure)";
                     break;
                 case -4:
-                    MessageBox.Show("Payment Canceled by User");
+                    message = "Płatność Ordzucona przez użytkownika";
                     break;
                 case -9:
-                    MessageBox.Show("Payment Denied with Unspecified Reason");
+                    message = "Płatnośc odrzucona z niewiadomego powodu";
                     break;
                 default:
-                    MessageBox.Show($"Unknown Result: {result}");
+                    message = $"Nieznany Result: {result}";
                     break;
             }
 
             // Handle additional information
-            MessageBox.Show($"Payment Type: {paymentType}");
-            MessageBox.Show($"Discount: {discount}");
-            MessageBox.Show($"Total Amount: {totalAmount}");
-            MessageBox.Show($"Transaction ID: {transactionID}");
+            string displayMessage = message + $"\nPayment Type: {paymentType}" + $"\nDiscount: {discount}" + $"\nTotal Amount: {totalAmount}" + $"\nTransaction ID: {transactionID}";
+            //MessageBox.Show($"Payment Type: {paymentType}");
+            //MessageBox.Show($"Discount: {discount}");
+            //MessageBox.Show($"Total Amount: {totalAmount}");
+            //MessageBox.Show($"Transaction ID: {transactionID}");
+
+            MessageBox.Show(displayMessage);
         } 
 
 
@@ -418,7 +422,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("No Communication");
                     break;
                 case -4:
-                    MessageBox.Show("Pricing Group Unknown/Not Available");
+                    MessageBox.Show("Pricing Group Niznany/Nie Dostępny");
                     break;
                 default:
                     textBoxCardNumber.Text = cardID.ToString();
