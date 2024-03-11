@@ -23,7 +23,7 @@ public class TelevendInterface
     public static extern int TelevendStatus();
 
     [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]
-    public static extern int TelevendGetPricingGroup(out uint AvailableCredit, out uint CardID);
+    public static extern int TelevendGetPricingGroup(out uint AvailableCredit, out ulong CardID);
 
 
     [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]

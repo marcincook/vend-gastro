@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             //using (SqlConnection connection = new SqlConnection(connectionString) //use your connection string here
             //{
             var bindingSource = new BindingSource();
-            string queryString = "SELECT * FROM dbo.NgastroKarta WHERE FlgBlokada=0";
+            string queryString = "SELECT TOP 50 * FROM dbo.NgastroKarta WHERE FlgBlokada=0";
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter(queryString, connection))
             {
                 try
@@ -405,12 +405,20 @@ namespace WindowsFormsApp1
 
             // 12006942281
 
-            //availableCredit
+            // Użycie w kodzie:
+            uint availableCredit;
+            ulong cardID;
 
             // Call the function to get pricing group information
-            int pricingGroup = TelevendInterface.TelevendGetPricingGroup(out uint availableCredit, out uint cardID);
+            int pricingGroup = TelevendInterface.TelevendGetPricingGroup(out availableCredit, out cardID);
+
+            // Logowanie parametrów do pliku dziennika
+            TelevendLogger.LogPricingGroup((int)availableCredit, cardID);
 
             textBoxCardNumber.Text = cardID.ToString();
+            textBoxCredit.Text = availableCredit.ToString();
+
+            var gg =  availableCredit;
 
             // Check the result and display information
             switch (pricingGroup)
@@ -426,9 +434,14 @@ namespace WindowsFormsApp1
                     break;
                 default:
                     textBoxCardNumber.Text = cardID.ToString();
-                    MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID}");
+                    textBoxCredit.Text = availableCredit.ToString();
+                    MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID} \n Avv {gg}");
                     break;
             }
+
+             
+
+            
         }
 
         private void btnTelevendRequestPayment_Click(object sender, EventArgs e)

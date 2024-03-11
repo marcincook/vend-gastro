@@ -75,6 +75,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnTelevendRequest = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCredit = new System.Windows.Forms.TextBox();
             this.groupBoxDb.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -409,6 +410,9 @@
             // btnTelevendGetPricingGroup
             // 
             this.btnTelevendGetPricingGroup.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnTelevendGetPricingGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelevendGetPricingGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTelevendGetPricingGroup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTelevendGetPricingGroup.Location = new System.Drawing.Point(7, 2);
             this.btnTelevendGetPricingGroup.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelevendGetPricingGroup.Name = "btnTelevendGetPricingGroup";
@@ -487,6 +491,9 @@
             // btnTelevendRequest
             // 
             this.btnTelevendRequest.BackColor = System.Drawing.Color.Red;
+            this.btnTelevendRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelevendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTelevendRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTelevendRequest.Location = new System.Drawing.Point(508, 2);
             this.btnTelevendRequest.Name = "btnTelevendRequest";
             this.btnTelevendRequest.Size = new System.Drawing.Size(281, 53);
@@ -504,11 +511,19 @@
             this.label5.TabIndex = 44;
             this.label5.Text = "Numer karty";
             // 
+            // textBoxCredit
+            // 
+            this.textBoxCredit.Location = new System.Drawing.Point(344, 34);
+            this.textBoxCredit.Name = "textBoxCredit";
+            this.textBoxCredit.Size = new System.Drawing.Size(158, 20);
+            this.textBoxCredit.TabIndex = 45;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2016, 122);
+            this.ClientSize = new System.Drawing.Size(1008, 98);
+            this.Controls.Add(this.textBoxCredit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTelevendRequest);
             this.Controls.Add(this.label4);
@@ -589,6 +604,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTelevendRequest;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxCredit;
     }
 }
 
