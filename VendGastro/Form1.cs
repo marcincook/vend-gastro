@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using VendGastro;
 
@@ -402,6 +403,7 @@ namespace WindowsFormsApp1
         private void btnTelevendGetPricingGroup_Click(object sender, EventArgs e)
         {
             textBoxCardNumber.Text = string.Empty;
+            labelSaldoValue.Text = "0,00";
 
             // 12006942281
 
@@ -417,6 +419,7 @@ namespace WindowsFormsApp1
 
             textBoxCardNumber.Text = cardID.ToString();
             textBoxCredit.Text = availableCredit.ToString();
+            labelNumerKarty.Text = cardID.ToString();
 
             var gg =  availableCredit;
 
@@ -435,6 +438,24 @@ namespace WindowsFormsApp1
                 default:
                     textBoxCardNumber.Text = cardID.ToString();
                     textBoxCredit.Text = availableCredit.ToString();
+
+                    // (float) Convert.ToDecimal((availableCredit/100), CultureInfo.GetCultureInfo("pl-PL"));
+
+                    //decimal vvv = (availableCredit / 100);
+
+                    ///textBoxCredit.Text = vvv.ToString();
+
+                    // labelSaldoValue.Text = Convert.ToDecimal((availableCredit / 100), CultureInfo.GetCultureInfo("pl-PL")).ToString();
+                    ///labelSaldoValue.Text = vvv.ToString();
+                    // Konwersja kwoty z groszy na złotówki
+                    decimal amountInZloty = availableCredit / 100.0m;
+
+                    // Formatowanie kwoty jako tekst z formatowaniem walutowym
+                    string formattedAmount = amountInZloty.ToString("C");
+
+                    // Wyświetlenie sformatowanej kwoty w etykiecie
+                    labelSaldoValue.Text = formattedAmount;
+
                     MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID} \n Avv {gg}");
                     break;
             }
@@ -476,7 +497,7 @@ namespace WindowsFormsApp1
 
         private void btnTelevendRequest_Click(object sender, EventArgs e)
         {
-            int requestedAmount = Int32.Parse(textBoxTelevendAmount.Text) * 100;
+            int requestedAmount = Int32.Parse(textBoxTelevendAmount.Text) * 1;
 
             // Call the function to request payment authorization
             int result = TelevendInterface.TelevendRequest(requestedAmount);
