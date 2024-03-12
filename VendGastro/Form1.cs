@@ -427,13 +427,16 @@ namespace WindowsFormsApp1
             switch (pricingGroup)
             {
                 case -1:
-                    MessageBox.Show("Not Initialized");
+                    //MessageBox.Show("Not Initialized");
+                    labelNumerKarty.Text = "Podłącz televend";
                     break;
                 case -2:
-                    MessageBox.Show("No Communication");
+                    //MessageBox.Show("No Communication");
+                    labelNumerKarty.Text = "Brak komunikacji";
                     break;
                 case -4:
-                    MessageBox.Show("Pricing Group Niznany/Nie Dostępny");
+                    //MessageBox.Show("Pricing Group Niznany/Nie Dostępny");
+                    labelNumerKarty.Text = "Saldo niedostępne / spróbuj ponownie";
                     break;
                 default:
                     textBoxCardNumber.Text = cardID.ToString();
@@ -456,7 +459,7 @@ namespace WindowsFormsApp1
                     // Wyświetlenie sformatowanej kwoty w etykiecie
                     labelSaldoValue.Text = formattedAmount;
 
-                    MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID} \n Avv {gg}");
+                    //MessageBox.Show($"Pricing Group: {pricingGroup}\nAvailable Credit: {availableCredit}\nCard ID: {cardID} \n Avv {gg}");
                     break;
             }
 

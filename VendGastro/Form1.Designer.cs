@@ -78,6 +78,8 @@
             this.textBoxCredit = new System.Windows.Forms.TextBox();
             this.labelSaldoValue = new System.Windows.Forms.Label();
             this.labelNumerKarty = new System.Windows.Forms.Label();
+            this.labelDTRTotal = new System.Windows.Forms.Label();
+            this.labelDTR = new System.Windows.Forms.Label();
             this.groupBoxDb.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -485,11 +487,11 @@
             // labelSaldoText
             // 
             this.labelSaldoText.AutoSize = true;
-            this.labelSaldoText.Location = new System.Drawing.Point(341, 2);
+            this.labelSaldoText.Location = new System.Drawing.Point(497, 7);
             this.labelSaldoText.Name = "labelSaldoText";
-            this.labelSaldoText.Size = new System.Drawing.Size(60, 13);
+            this.labelSaldoText.Size = new System.Drawing.Size(104, 13);
             this.labelSaldoText.TabIndex = 42;
-            this.labelSaldoText.Text = "Saldo karty";
+            this.labelSaldoText.Text = "Saldo karty televend";
             // 
             // btnTelevendRequest
             // 
@@ -509,7 +511,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(170, 2);
+            this.label5.Location = new System.Drawing.Point(170, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 44;
@@ -527,7 +529,7 @@
             // 
             this.labelSaldoValue.AutoSize = true;
             this.labelSaldoValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSaldoValue.Location = new System.Drawing.Point(339, 15);
+            this.labelSaldoValue.Location = new System.Drawing.Point(495, 20);
             this.labelSaldoValue.Name = "labelSaldoValue";
             this.labelSaldoValue.Size = new System.Drawing.Size(58, 26);
             this.labelSaldoValue.TabIndex = 46;
@@ -536,18 +538,39 @@
             // labelNumerKarty
             // 
             this.labelNumerKarty.AutoSize = true;
-            this.labelNumerKarty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNumerKarty.Location = new System.Drawing.Point(170, 15);
+            this.labelNumerKarty.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNumerKarty.Location = new System.Drawing.Point(170, 20);
             this.labelNumerKarty.Name = "labelNumerKarty";
-            this.labelNumerKarty.Size = new System.Drawing.Size(18, 20);
+            this.labelNumerKarty.Size = new System.Drawing.Size(20, 22);
             this.labelNumerKarty.TabIndex = 47;
             this.labelNumerKarty.Text = "0";
+            // 
+            // labelDTRTotal
+            // 
+            this.labelDTRTotal.AutoSize = true;
+            this.labelDTRTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDTRTotal.Location = new System.Drawing.Point(637, 20);
+            this.labelDTRTotal.Name = "labelDTRTotal";
+            this.labelDTRTotal.Size = new System.Drawing.Size(58, 26);
+            this.labelDTRTotal.TabIndex = 49;
+            this.labelDTRTotal.Text = "0,00";
+            // 
+            // labelDTR
+            // 
+            this.labelDTR.AutoSize = true;
+            this.labelDTR.Location = new System.Drawing.Point(639, 7);
+            this.labelDTR.Name = "labelDTR";
+            this.labelDTR.Size = new System.Drawing.Size(46, 13);
+            this.labelDTR.TabIndex = 48;
+            this.labelDTR.Text = "Dopłata";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 60);
+            this.Controls.Add(this.labelDTRTotal);
+            this.Controls.Add(this.labelDTR);
             this.Controls.Add(this.labelNumerKarty);
             this.Controls.Add(this.labelSaldoValue);
             this.Controls.Add(this.textBoxCredit);
@@ -635,6 +658,8 @@
         private System.Windows.Forms.TextBox textBoxCredit;
         private System.Windows.Forms.Label labelSaldoValue;
         private System.Windows.Forms.Label labelNumerKarty;
+        private System.Windows.Forms.Label labelDTRTotal;
+        private System.Windows.Forms.Label labelDTR;
     }
 }
 
