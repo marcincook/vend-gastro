@@ -19,5 +19,7 @@ FROM NgastroDTRachunek dtr
          LEFT JOIN NGastroDTRachunekTotalizer t ON t.DTRachunekID = dtr.ID
 WHERE dtr.Status = 0
   --AND RodzajOtwarciaRachunkuID = '17242DE3-B2EB-47E4-B361-B302E5F35BAE' -- na kartê
-  AND KasaID = 'BA8423C9-9261-4B97-A021-3ABAB54E59F1'
+  AND KasaID = 'E273EB11-AFF2-45E9-AA55-78AE8D2F0F3C'
 ORDER BY dtr.DataOtwarcia DESC
+
+SELECT * FROM NGastroDTRachunek order by DataOtwarcia desc

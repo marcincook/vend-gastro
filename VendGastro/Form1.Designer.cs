@@ -78,8 +78,17 @@
             this.textBoxCredit = new System.Windows.Forms.TextBox();
             this.labelSaldoValue = new System.Windows.Forms.Label();
             this.labelNumerKarty = new System.Windows.Forms.Label();
-            this.labelDTRTotal = new System.Windows.Forms.Label();
-            this.labelDTR = new System.Windows.Forms.Label();
+            this.labelTotalValue = new System.Windows.Forms.Label();
+            this.labelDoplataText = new System.Windows.Forms.Label();
+            this.labelDoplataValue = new System.Windows.Forms.Label();
+            this.labelTotalText = new System.Windows.Forms.Label();
+            this.labelTextBoxCredit = new System.Windows.Forms.Label();
+            this.labelTextBoxTelevendAmount = new System.Windows.Forms.Label();
+            this.labelTextBoxCardNumber = new System.Windows.Forms.Label();
+            this.textBoxDTRachunekID = new System.Windows.Forms.TextBox();
+            this.labelDTRachunekIDText = new System.Windows.Forms.Label();
+            this.labelKartaID = new System.Windows.Forms.Label();
+            this.textBoxKartaID = new System.Windows.Forms.TextBox();
             this.groupBoxDb.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -421,9 +430,9 @@
             this.btnTelevendGetPricingGroup.Location = new System.Drawing.Point(0, 0);
             this.btnTelevendGetPricingGroup.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelevendGetPricingGroup.Name = "btnTelevendGetPricingGroup";
-            this.btnTelevendGetPricingGroup.Size = new System.Drawing.Size(165, 60);
+            this.btnTelevendGetPricingGroup.Size = new System.Drawing.Size(165, 45);
             this.btnTelevendGetPricingGroup.TabIndex = 36;
-            this.btnTelevendGetPricingGroup.Text = "Pobierz dane karty";
+            this.btnTelevendGetPricingGroup.Text = "Pobierz kartę";
             this.btnTelevendGetPricingGroup.UseVisualStyleBackColor = false;
             this.btnTelevendGetPricingGroup.Click += new System.EventHandler(this.btnTelevendGetPricingGroup_Click);
             // 
@@ -437,10 +446,11 @@
             // 
             // textBoxCardNumber
             // 
+            this.textBoxCardNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxCardNumber.Location = new System.Drawing.Point(547, 164);
             this.textBoxCardNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCardNumber.Name = "textBoxCardNumber";
-            this.textBoxCardNumber.Size = new System.Drawing.Size(157, 20);
+            this.textBoxCardNumber.Size = new System.Drawing.Size(157, 27);
             this.textBoxCardNumber.TabIndex = 37;
             // 
             // progressBarRs
@@ -479,19 +489,21 @@
             // 
             // textBoxTelevendAmount
             // 
-            this.textBoxTelevendAmount.Location = new System.Drawing.Point(547, 71);
+            this.textBoxTelevendAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxTelevendAmount.Location = new System.Drawing.Point(711, 116);
             this.textBoxTelevendAmount.Name = "textBoxTelevendAmount";
-            this.textBoxTelevendAmount.Size = new System.Drawing.Size(158, 20);
+            this.textBoxTelevendAmount.Size = new System.Drawing.Size(158, 27);
             this.textBoxTelevendAmount.TabIndex = 41;
             // 
             // labelSaldoText
             // 
+            this.labelSaldoText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSaldoText.AutoSize = true;
-            this.labelSaldoText.Location = new System.Drawing.Point(497, 7);
+            this.labelSaldoText.Location = new System.Drawing.Point(433, 4);
             this.labelSaldoText.Name = "labelSaldoText";
-            this.labelSaldoText.Size = new System.Drawing.Size(104, 13);
+            this.labelSaldoText.Size = new System.Drawing.Size(82, 13);
             this.labelSaldoText.TabIndex = 42;
-            this.labelSaldoText.Text = "Saldo karty televend";
+            this.labelSaldoText.Text = "Saldo Televend";
             // 
             // btnTelevendRequest
             // 
@@ -502,16 +514,16 @@
             this.btnTelevendRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTelevendRequest.Location = new System.Drawing.Point(794, 0);
             this.btnTelevendRequest.Name = "btnTelevendRequest";
-            this.btnTelevendRequest.Size = new System.Drawing.Size(232, 60);
+            this.btnTelevendRequest.Size = new System.Drawing.Size(232, 45);
             this.btnTelevendRequest.TabIndex = 43;
-            this.btnTelevendRequest.Text = "Wyślij Rachunek do Televend";
+            this.btnTelevendRequest.Text = "Televend 0,00 zł";
             this.btnTelevendRequest.UseVisualStyleBackColor = false;
             this.btnTelevendRequest.Click += new System.EventHandler(this.btnTelevendRequest_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(170, 7);
+            this.label5.Location = new System.Drawing.Point(170, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 44;
@@ -527,50 +539,157 @@
             // 
             // labelSaldoValue
             // 
+            this.labelSaldoValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSaldoValue.AutoSize = true;
-            this.labelSaldoValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSaldoValue.Location = new System.Drawing.Point(495, 20);
+            this.labelSaldoValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSaldoValue.Location = new System.Drawing.Point(395, 19);
+            this.labelSaldoValue.MinimumSize = new System.Drawing.Size(120, 0);
             this.labelSaldoValue.Name = "labelSaldoValue";
-            this.labelSaldoValue.Size = new System.Drawing.Size(58, 26);
+            this.labelSaldoValue.Size = new System.Drawing.Size(120, 20);
             this.labelSaldoValue.TabIndex = 46;
             this.labelSaldoValue.Text = "0,00";
+            this.labelSaldoValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelNumerKarty
             // 
             this.labelNumerKarty.AutoSize = true;
-            this.labelNumerKarty.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNumerKarty.Location = new System.Drawing.Point(170, 20);
+            this.labelNumerKarty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNumerKarty.Location = new System.Drawing.Point(170, 19);
+            this.labelNumerKarty.MinimumSize = new System.Drawing.Size(200, 0);
             this.labelNumerKarty.Name = "labelNumerKarty";
-            this.labelNumerKarty.Size = new System.Drawing.Size(20, 22);
+            this.labelNumerKarty.Size = new System.Drawing.Size(200, 18);
             this.labelNumerKarty.TabIndex = 47;
             this.labelNumerKarty.Text = "0";
+            this.labelNumerKarty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelDTRTotal
+            // labelTotalValue
             // 
-            this.labelDTRTotal.AutoSize = true;
-            this.labelDTRTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDTRTotal.Location = new System.Drawing.Point(637, 20);
-            this.labelDTRTotal.Name = "labelDTRTotal";
-            this.labelDTRTotal.Size = new System.Drawing.Size(58, 26);
-            this.labelDTRTotal.TabIndex = 49;
-            this.labelDTRTotal.Text = "0,00";
+            this.labelTotalValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalValue.AutoSize = true;
+            this.labelTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTotalValue.Location = new System.Drawing.Point(530, 19);
+            this.labelTotalValue.MinimumSize = new System.Drawing.Size(120, 0);
+            this.labelTotalValue.Name = "labelTotalValue";
+            this.labelTotalValue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelTotalValue.Size = new System.Drawing.Size(120, 20);
+            this.labelTotalValue.TabIndex = 49;
+            this.labelTotalValue.Text = "0,00";
+            this.labelTotalValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelDTR
+            // labelDoplataText
             // 
-            this.labelDTR.AutoSize = true;
-            this.labelDTR.Location = new System.Drawing.Point(639, 7);
-            this.labelDTR.Name = "labelDTR";
-            this.labelDTR.Size = new System.Drawing.Size(46, 13);
-            this.labelDTR.TabIndex = 48;
-            this.labelDTR.Text = "Dopłata";
+            this.labelDoplataText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDoplataText.AutoSize = true;
+            this.labelDoplataText.Location = new System.Drawing.Point(701, 4);
+            this.labelDoplataText.Name = "labelDoplataText";
+            this.labelDoplataText.Size = new System.Drawing.Size(80, 13);
+            this.labelDoplataText.TabIndex = 48;
+            this.labelDoplataText.Text = "Gotówka/Karta";
+            // 
+            // labelDoplataValue
+            // 
+            this.labelDoplataValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDoplataValue.AutoSize = true;
+            this.labelDoplataValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelDoplataValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDoplataValue.Location = new System.Drawing.Point(652, 19);
+            this.labelDoplataValue.MinimumSize = new System.Drawing.Size(120, 0);
+            this.labelDoplataValue.Name = "labelDoplataValue";
+            this.labelDoplataValue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelDoplataValue.Size = new System.Drawing.Size(120, 20);
+            this.labelDoplataValue.TabIndex = 51;
+            this.labelDoplataValue.Text = "0,00";
+            this.labelDoplataValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelTotalText
+            // 
+            this.labelTotalText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalText.AutoSize = true;
+            this.labelTotalText.Location = new System.Drawing.Point(557, 4);
+            this.labelTotalText.Name = "labelTotalText";
+            this.labelTotalText.Size = new System.Drawing.Size(93, 13);
+            this.labelTotalText.TabIndex = 50;
+            this.labelTotalText.Text = "Rachunek w POS";
+            // 
+            // labelTextBoxCredit
+            // 
+            this.labelTextBoxCredit.AutoSize = true;
+            this.labelTextBoxCredit.Location = new System.Drawing.Point(547, 98);
+            this.labelTextBoxCredit.Name = "labelTextBoxCredit";
+            this.labelTextBoxCredit.Size = new System.Drawing.Size(34, 13);
+            this.labelTextBoxCredit.TabIndex = 52;
+            this.labelTextBoxCredit.Text = "Credit";
+            // 
+            // labelTextBoxTelevendAmount
+            // 
+            this.labelTextBoxTelevendAmount.AutoSize = true;
+            this.labelTextBoxTelevendAmount.Location = new System.Drawing.Point(711, 97);
+            this.labelTextBoxTelevendAmount.Name = "labelTextBoxTelevendAmount";
+            this.labelTextBoxTelevendAmount.Size = new System.Drawing.Size(91, 13);
+            this.labelTextBoxTelevendAmount.TabIndex = 53;
+            this.labelTextBoxTelevendAmount.Text = "Televend Amount";
+            // 
+            // labelTextBoxCardNumber
+            // 
+            this.labelTextBoxCardNumber.AutoSize = true;
+            this.labelTextBoxCardNumber.Location = new System.Drawing.Point(547, 149);
+            this.labelTextBoxCardNumber.Name = "labelTextBoxCardNumber";
+            this.labelTextBoxCardNumber.Size = new System.Drawing.Size(64, 13);
+            this.labelTextBoxCardNumber.TabIndex = 54;
+            this.labelTextBoxCardNumber.Text = "Numer karty";
+            // 
+            // textBoxDTRachunekID
+            // 
+            this.textBoxDTRachunekID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDTRachunekID.Location = new System.Drawing.Point(547, 259);
+            this.textBoxDTRachunekID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxDTRachunekID.Name = "textBoxDTRachunekID";
+            this.textBoxDTRachunekID.Size = new System.Drawing.Size(373, 23);
+            this.textBoxDTRachunekID.TabIndex = 55;
+            // 
+            // labelDTRachunekIDText
+            // 
+            this.labelDTRachunekIDText.AutoSize = true;
+            this.labelDTRachunekIDText.Location = new System.Drawing.Point(547, 244);
+            this.labelDTRachunekIDText.Name = "labelDTRachunekIDText";
+            this.labelDTRachunekIDText.Size = new System.Drawing.Size(83, 13);
+            this.labelDTRachunekIDText.TabIndex = 56;
+            this.labelDTRachunekIDText.Text = "DTRachunekID";
+            // 
+            // labelKartaID
+            // 
+            this.labelKartaID.AutoSize = true;
+            this.labelKartaID.Location = new System.Drawing.Point(547, 197);
+            this.labelKartaID.Name = "labelKartaID";
+            this.labelKartaID.Size = new System.Drawing.Size(43, 13);
+            this.labelKartaID.TabIndex = 58;
+            this.labelKartaID.Text = "KartaID";
+            // 
+            // textBoxKartaID
+            // 
+            this.textBoxKartaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKartaID.Location = new System.Drawing.Point(547, 212);
+            this.textBoxKartaID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxKartaID.Name = "textBoxKartaID";
+            this.textBoxKartaID.Size = new System.Drawing.Size(373, 23);
+            this.textBoxKartaID.TabIndex = 57;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 60);
-            this.Controls.Add(this.labelDTRTotal);
-            this.Controls.Add(this.labelDTR);
+            this.ClientSize = new System.Drawing.Size(1024, 45);
+            this.Controls.Add(this.labelKartaID);
+            this.Controls.Add(this.textBoxKartaID);
+            this.Controls.Add(this.labelDTRachunekIDText);
+            this.Controls.Add(this.textBoxDTRachunekID);
+            this.Controls.Add(this.labelTextBoxCardNumber);
+            this.Controls.Add(this.labelTextBoxTelevendAmount);
+            this.Controls.Add(this.labelTextBoxCredit);
+            this.Controls.Add(this.labelDoplataValue);
+            this.Controls.Add(this.labelTotalText);
+            this.Controls.Add(this.labelTotalValue);
+            this.Controls.Add(this.labelDoplataText);
             this.Controls.Add(this.labelNumerKarty);
             this.Controls.Add(this.labelSaldoValue);
             this.Controls.Add(this.textBoxCredit);
@@ -586,7 +705,7 @@
             this.Controls.Add(this.groupBoxDb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1024, 60);
+            this.MinimumSize = new System.Drawing.Size(1024, 45);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "VendGastro Connector";
@@ -658,8 +777,17 @@
         private System.Windows.Forms.TextBox textBoxCredit;
         private System.Windows.Forms.Label labelSaldoValue;
         private System.Windows.Forms.Label labelNumerKarty;
-        private System.Windows.Forms.Label labelDTRTotal;
-        private System.Windows.Forms.Label labelDTR;
+        private System.Windows.Forms.Label labelTotalValue;
+        private System.Windows.Forms.Label labelDoplataText;
+        private System.Windows.Forms.Label labelDoplataValue;
+        private System.Windows.Forms.Label labelTotalText;
+        private System.Windows.Forms.Label labelTextBoxCredit;
+        private System.Windows.Forms.Label labelTextBoxTelevendAmount;
+        private System.Windows.Forms.Label labelTextBoxCardNumber;
+        private System.Windows.Forms.TextBox textBoxDTRachunekID;
+        private System.Windows.Forms.Label labelDTRachunekIDText;
+        private System.Windows.Forms.Label labelKartaID;
+        private System.Windows.Forms.TextBox textBoxKartaID;
     }
 }
 

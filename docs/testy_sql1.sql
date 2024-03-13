@@ -12,6 +12,24 @@ SELECT
     LEFT JOIN NSysSesja s ON s.ID = sb.SesjaID
     LEFT JOIN NSysStanowisko st ON st.ID = s.StanowiskoID
     WHERE sb.ObiektSymbol = 'NGastroDTRachunek'
+	AND dtr.KasaID = 'E273EB11-AFF2-45E9-AA55-78AE8D2F0F3C'
+
+
+	-- getBasket 
+
+SELECT
+    st.Nazwa as pos, 
+    CAST(t.WartoscBrutto * 100 as Integer) as cents,
+	t.WartoscBrutto as total,
+    dtr.Numer as nr,
+    sb.ObiektID as rid 
+FROM NSysSesjaObiektBlokada sb
+    LEFT JOIN NGastroDTRachunek dtr ON dtr.ID = sb.ObiektID
+    LEFT JOIN NGastroDTRachunekTotalizer t ON t.DTRachunekID = dtr.ID
+    LEFT JOIN NSysSesja s ON s.ID = sb.SesjaID
+    LEFT JOIN NSysStanowisko st ON st.ID = s.StanowiskoID
+WHERE sb.ObiektSymbol = 'NGastroDTRachunek'
+	AND dtr.KasaID = 'E273EB11-AFF2-45E9-AA55-78AE8D2F0F3C'
 
 	SELECT * FROM NGastroDTRachunek WHERE ID = '02188AD4-412D-45F4-B9C4-A313B9E607C3'
 
