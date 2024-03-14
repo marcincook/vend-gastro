@@ -7,12 +7,12 @@ public class TelevendInterface
 
     //[DllImport(DLL_PATH, CallingConvention = CallingConvention.Cdecl)]
     [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]
-    public static extern int TelevendInit(int numerPortuSzeregowego, TelevendCallback callback);
+    public static extern int TelevendInit(int numerPortuSzeregowego, VendGastro.TelevendCallbackHandler.TelevendCallback callback);
 
     // Definicja funkcji zwrotnej
     //public delegate void TelevendCallback(int result);
 
-    public delegate void TelevendCallback(int result, int paymentType, int discount, int totalAmount, ulong transactionID);
+    //public delegate void TelevendCallback(int result, int paymentType, int discount, int totalAmount, ulong transactionID);
 
 
     [DllImport(DLL_PATH, CallingConvention = CallingConvention.StdCall)]

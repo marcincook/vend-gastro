@@ -31,6 +31,10 @@ FROM NSysSesjaObiektBlokada sb
 WHERE sb.ObiektSymbol = 'NGastroDTRachunek'
 	AND dtr.KasaID = 'E273EB11-AFF2-45E9-AA55-78AE8D2F0F3C'
 
+	-- findCardId
+	SELECT TOP 1 ID as KartaID From NGastroKarta WHERE IdentyfikatorSystemowy = '3120379099' AND FlgBlokada = 0
+
+
 	SELECT * FROM NGastroDTRachunek WHERE ID = '02188AD4-412D-45F4-B9C4-A313B9E607C3'
 
 	SELECT * FROM NGastroDTRachunekTotalizer WHERE DTRachunekID = '1C8CDA7D-A534-4A60-9478-22962B6E1D8B'

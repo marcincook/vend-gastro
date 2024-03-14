@@ -22,25 +22,5 @@ namespace VendGastro.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM1")]
-        public string rs_com_name {
-            get {
-                return ((string)(this["rs_com_name"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-Q2O4CJ3\\SQL2019;Initial Catalog=BB_06_AUT_23;Persist Security" +
-            " Info=True;User ID=sa")]
-        public string BB_06_AUT_23ConnectionString {
-            get {
-                return ((string)(this["BB_06_AUT_23ConnectionString"]));
-            }
-        }
     }
 }

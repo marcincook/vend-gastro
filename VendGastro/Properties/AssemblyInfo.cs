@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("WindowsFormsApp1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("VendGastroApp")]
+[assembly: AssemblyDescription("Aplikacja Integrująca System POS z TelevendBox")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsApp1")]
+[assembly: AssemblyCompany("GrupaAMB")]
+[assembly: AssemblyProduct("VendGastroApp")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
